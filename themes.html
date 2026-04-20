@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Themes - AeroBlox</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+function setTheme(t){
+  document.body.className = t;
+}
+</script>
+</head>
+
+<body>
+
+<div class="banner"></div>
+
+<div class="topbar">
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="profile.html">Profile</a>
+    <a href="themes.html">Themes</a>
+  </div>
+</div>
+
+<div class="center-wrap">
+  <div class="panel">
+
+    <h2>Choose Theme</h2>
+
+    <button onclick="setTheme('aero')">Aero</button>
+    <button onclick="setTheme('dark')">Dark Aero</button>
+    <button onclick="setTheme('metro')">Metro</button>
+    <button onclick="setTheme('eco')">Eco</button>
+
+  </div>
+</div>
+
+</body>
+</html>
