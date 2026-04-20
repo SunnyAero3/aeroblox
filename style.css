@@ -1,50 +1,105 @@
 body {
   margin: 0;
-  font-family: Segoe UI, Arial;
-  transition: all 0.3s ease;
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav a {
-  margin-left: 14px;
-  text-decoration: none;
-}
-
-.hero {
+  font-family: Segoe UI, Tahoma, Arial;
+  background: linear-gradient(to bottom, #cfefff, #6fbfff, #2f7fff);
   text-align: center;
-  margin-top: 120px;
 }
 
-button {
-  padding: 12px 22px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
+/* ===== BANNER AREA (LOGO IMAGE SECTION) ===== */
+.banner {
+  width: 100%;
+  height: 110px;
+
+  background: url("assets/banner.png");
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: inset 0 -10px 20px rgba(0,0,0,0.25);
 }
 
-.grid {
+/* ===== BLUE 2011 TOPBAR ===== */
+.topbar {
+  height: 48px;
+
   display: flex;
-  gap: 15px;
   justify-content: center;
-  margin-top: 30px;
-}
-
-.card {
-  width: 160px;
-  height: 120px;
-  display: flex;
   align-items: center;
+  gap: 22px;
+
+  background: linear-gradient(#4fa9ff, #1f6fd6);
+  border-bottom: 3px solid #0b3f86;
+
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+              0 4px 18px rgba(0,0,0,0.25);
+}
+
+/* NAV TABS */
+.nav a {
+  padding: 6px 14px;
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-1px);
+}
+
+/* ===== CENTER PANEL ===== */
+.center-wrap {
+  display: flex;
   justify-content: center;
-  border-radius: 12px;
+  margin-top: 60px;
+}
+
+.panel {
+  width: 700px;
+
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 18px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  padding: 28px;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  background: linear-gradient(#9fffa6, #1fbf3a);
+  border: 1px solid #0a6f1f;
+
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* INPUTS */
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 6px 0;
+
+  border-radius: 10px;
+  border: 1px solid rgba(0,90,180,0.5);
+
+  background: rgba(255,255,255,0.6);
 }
