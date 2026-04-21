@@ -1,40 +1,61 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>Themes - AeroBlox</title>
-<link rel="stylesheet" href="style.css">
+
+<link id="themeStylesheet" rel="stylesheet" href="style.css">
 
 <script>
-function setTheme(t){
-  document.body.className = t;
+function setTheme(theme) {
+  document.getElementById("themeStylesheet").href = theme;
+  localStorage.setItem("aeroblox_theme", theme);
 }
+
+window.onload = function () {
+  var saved = localStorage.getItem("aeroblox_theme");
+  if (saved) {
+    document.getElementById("themeStylesheet").href = saved;
+  }
+};
 </script>
+
 </head>
 
 <body>
 
-<div class="banner"></div>
+<div id="page">
 
-<div class="topbar">
-  <div class="nav">
+  <div id="banner">
+    <img src="assets/aerobloxbanner.png">
+  </div>
+
+  <div id="navbar">
     <a href="index.html">Home</a>
     <a href="games.html">Games</a>
     <a href="profile.html">Profile</a>
     <a href="themes.html">Themes</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
   </div>
-</div>
 
-<div class="center-wrap">
-  <div class="panel">
+  <div id="main">
 
-    <h2>Choose Theme</h2>
+    <div class="box">
+      <h1>Themes</h1>
+      <p>Choose your visual style.</p>
+    </div>
 
-    <button onclick="setTheme('aero')">Aero</button>
-    <button onclick="setTheme('dark')">Dark Aero</button>
-    <button onclick="setTheme('metro')">Metro</button>
-    <button onclick="setTheme('eco')">Eco</button>
+    <div class="box">
+
+      <button class="bluebutton" onclick="setTheme('style.css')">Default Aero</button><br><br>
+      <button class="bluebutton" onclick="setTheme('css/eco.css')">Eco Theme</button><br><br>
+      <button class="bluebutton" onclick="setTheme('css/metro.css')">Metro Theme</button><br><br>
+      <button class="bluebutton" onclick="setTheme('css/darkaero.css')">Dark Aero</button>
+
+    </div>
 
   </div>
+
 </div>
 
 </body>
