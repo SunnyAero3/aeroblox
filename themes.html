@@ -4,21 +4,7 @@
 <title>Themes - AeroBlox</title>
 
 <link id="themeStylesheet" rel="stylesheet" href="style.css">
-
-<script>
-function setTheme(theme) {
-  document.getElementById("themeStylesheet").href = theme;
-  localStorage.setItem("aeroblox_theme", theme);
-}
-
-window.onload = function () {
-  var saved = localStorage.getItem("aeroblox_theme");
-  if (saved) {
-    document.getElementById("themeStylesheet").href = saved;
-  }
-};
-</script>
-
+<script src="app.js"></script>
 </head>
 
 <body>
@@ -32,7 +18,6 @@ window.onload = function () {
   <div id="navbar">
     <a href="index.html">Home</a>
     <a href="games.html">Games</a>
-    <a href="profile.html">Profile</a>
     <a href="themes.html">Themes</a>
     <a href="signup.html">Sign Up</a>
     <a href="login.html">Login</a>
@@ -42,15 +27,15 @@ window.onload = function () {
 
     <div class="box">
       <h1>Themes</h1>
-      <p>Choose your visual style.</p>
+      <p>Choose your style.</p>
     </div>
 
     <div class="box">
 
-      <button class="bluebutton" onclick="setTheme('style.css')">Default Aero</button><br><br>
-      <button class="bluebutton" onclick="setTheme('css/eco.css')">Eco Theme</button><br><br>
-      <button class="bluebutton" onclick="setTheme('css/metro.css')">Metro Theme</button><br><br>
-      <button class="bluebutton" onclick="setTheme('css/darkaero.css')">Dark Aero</button>
+      <button class="bluebutton" onclick="applyTheme('style.css')">Default Aero</button><br><br>
+      <button class="bluebutton" onclick="applyTheme('css/eco.css')">Eco Theme</button><br><br>
+      <button class="bluebutton" onclick="applyTheme('css/metro.css')">Metro Theme</button><br><br>
+      <button class="bluebutton" onclick="applyTheme('css/darkaero.css')">Dark Aero</button>
 
     </div>
 
