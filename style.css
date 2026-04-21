@@ -1,61 +1,94 @@
+
 /* ===============================
-   AeroBlox - Full Glossy Revival CSS
-   Classic Roblox revival + Aero gloss
+   AEROBLOX FULL REVIVAL STYLE.CSS
+   Unified 2011 Roblox + Aero Gloss UI
    =============================== */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Segoe UI, Tahoma, Arial, sans-serif;
-  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
 
   background:
     url("assets/lightflare.png") no-repeat top center,
     linear-gradient(to bottom, #dff6ff 0%, #79c6ff 35%, #2f86ff 70%, #1e63d1 100%);
+
   background-attachment: fixed;
 }
 
 /* ===============================
-   CENTER PAGE
+   MASTER PAGE WRAPPER (IMPORTANT)
    =============================== */
 
 #page {
   width: 960px;
   margin: 0 auto;
+
   text-align: left;
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
 }
 
 /* ===============================
-   BANNER
+   BANNER (FULL WIDTH OF PAGE)
    =============================== */
 
 #banner {
+  width: 100%;
   height: 120px;
 
   background:
-    linear-gradient(to bottom, rgba(255,255,255,0.78), rgba(255,255,255,0.08)),
-    linear-gradient(to bottom, #7fd3ff, #2f86ff);
-
-  border-bottom: 1px solid rgba(255,255,255,0.75);
+    linear-gradient(to bottom, #7fd3ff 0%, #3aa0ff 50%, #1e63d1 100%);
 
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.95),
-    inset 0 -12px 18px rgba(0,0,0,0.18),
-    0 6px 18px rgba(0,0,0,0.22);
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 -10px 18px rgba(0,0,0,0.18);
 
-  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 #banner img {
-  margin-top: 8px;
+  width: 100%;
+  height: 100%;
+  display: block;
   border: 0;
 }
 
+/* glossy sweep */
+#banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0)
+  );
+
+  transform: skewX(-20deg);
+}
+
+#banner:hover:before {
+  animation: shine 1.2s ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -60%; }
+  100% { left: 120%; }
+}
+
 /* ===============================
-   NAVBAR
+   NAVBAR (ATTACHED UNDER BANNER)
    =============================== */
 
 #navbar {
+  width: 100%;
   height: 42px;
 
   background:
@@ -66,8 +99,7 @@ body {
 
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.9),
-    inset 0 -1px 0 rgba(255,255,255,0.15),
-    0 3px 10px rgba(0,0,0,0.25);
+    inset 0 -1px 0 rgba(255,255,255,0.15);
 }
 
 #navbar a {
@@ -89,11 +121,8 @@ body {
 }
 
 #navbar a:active {
-  padding-top: 13px;
-  padding-bottom: 11px;
-
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(255,255,255,0.05));
+  position: relative;
+  top: 1px;
 }
 
 /* ===============================
@@ -115,7 +144,7 @@ body {
 }
 
 /* ===============================
-   PANELS / BOXES
+   BOXES / PANELS
    =============================== */
 
 .box {
@@ -134,7 +163,7 @@ body {
 }
 
 /* ===============================
-   HEADINGS
+   TEXT STYLES
    =============================== */
 
 h1, h2, h3 {
@@ -149,7 +178,7 @@ p {
 }
 
 /* ===============================
-   PLAY NOW / GREEN BUTTON
+   GREEN PLAY BUTTON
    =============================== */
 
 .greenbutton {
@@ -162,7 +191,7 @@ p {
   border: 1px solid #0d6e17;
   border-radius: 8px;
 
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
 
@@ -179,27 +208,16 @@ p {
   cursor: pointer;
 }
 
-/* hover */
-.greenbutton:hover {
-  background:
-    linear-gradient(to bottom, #b6ffba 0%, #59e463 45%, #27bc34 55%, #179423 100%);
-}
-
-/* pressed */
 .greenbutton:active {
   top: 4px;
-
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.45),
     0 1px 0 #0d6e17,
     0 3px 8px rgba(0,0,0,0.18);
-
-  background:
-    linear-gradient(to bottom, #6edb74 0%, #29b935 50%, #14841f 100%);
 }
 
 /* ===============================
-   BLUE BUTTON OPTION
+   BLUE BUTTON
    =============================== */
 
 .bluebutton {
@@ -212,57 +230,22 @@ p {
   border: 1px solid #0c468f;
   border-radius: 8px;
 
-  color: white;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
 
-  text-shadow: 0 1px 1px rgba(0,0,0,0.35);
-
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.7),
-    0 5px 0 #0c468f,
-    0 8px 16px rgba(0,0,0,0.22);
-
-  position: relative;
-  top: 0;
-}
-
-.bluebutton:hover {
-  filter: brightness(1.06);
+    0 5px 0 #0c468f;
 }
 
 .bluebutton:active {
+  position: relative;
   top: 4px;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.4),
-    0 1px 0 #0c468f,
-    0 3px 8px rgba(0,0,0,0.18);
 }
 
 /* ===============================
-   INPUTS
-   =============================== */
-
-input,
-select,
-textarea {
-  width: 280px;
-  padding: 9px;
-
-  border: 1px solid #7fa8da;
-  border-radius: 7px;
-
-  background:
-    linear-gradient(to bottom, #ffffff, #eaf4ff);
-
-  box-shadow:
-    inset 0 1px 2px rgba(0,0,0,0.08);
-
-  font-family: Segoe UI, Tahoma, Arial, sans-serif;
-}
-
-/* ===============================
-   GAME CARDS
+   GAME GRID
    =============================== */
 
 .game {
@@ -286,33 +269,22 @@ textarea {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.85),
     0 6px 14px rgba(0,0,0,0.18);
-
-  margin-bottom: 6px;
 }
-
-.thumb:hover {
-  filter: brightness(1.05);
-}
-
-/* ===============================
-   PROFILE / SIDEBAR BOXES
-   =============================== */
-
-.sidebarbox {
-  padding: 12px;
-  margin-bottom: 14px;
-
-  background:
-    linear-gradient(to bottom, #ffffff, #e6f1ff);
-
-  border: 1px solid #8ab2ea;
-  border-radius: 8px;
-}
-
-/* ===============================
-   CLEAR FIX
-   =============================== */
 
 .clear {
   clear: both;
+}
+
+/* ===============================
+   INPUTS
+   =============================== */
+
+input {
+  width: 280px;
+  padding: 9px;
+
+  border: 1px solid #7fa8da;
+  border-radius: 7px;
+
+  background: linear-gradient(to bottom, #fff, #eaf4ff);
 }
